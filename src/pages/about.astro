@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About | Jack Sechler">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 mb-8 backdrop-blur-sm">
+      <h1 class="text-4xl font-bold mb-12 gradient-text">About Me</h1>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+        <div class="lg:col-span-4">
+          <div class="sticky top-24">
+            <div class="group aspect-[3/4] rounded-xl bg-gradient-to-br from-teal-500 to-purple-600 p-1 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20 dark:hover:shadow-purple-500/20">
+              <div class="rounded-lg overflow-hidden h-full bg-white dark:bg-gray-800">
+                <img 
+                  src="/images/PortraitPhotoJS.jpg" 
+                  alt="Jack Sechler"
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-8">
+          <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+            Data analyst and business intelligence specialist with a passion for transforming complex data into actionable insights. Currently working as a Business Analyst at PG&E, focusing on process optimization and strategic decision-making through data-driven approaches.
+          </p>
+          
+          <div class="flex flex-wrap gap-3 mb-12">
+            {['Power BI', 'SQL', 'Python', 'Node.js', 'Tableau', 'Excel', 'Docker', 'JavaScript'].map(skill => (
+              <span class="px-4 py-2 rounded-full bg-mint-100 dark:bg-blue-900 text-teal-800 dark:text-blue-200 text-sm font-medium transform hover:scale-105 transition-transform duration-200">
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          <div class="space-y-12">
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Interests & Hobbies</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-mint-50 dark:bg-gray-700/50 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                  <h3 class="text-xl font-semibold mb-4 text-teal-600 dark:text-teal-400">Outdoor Adventures</h3>
+                  <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    Golfing, Running, Staying Active
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Hiking national parks // Spending time in Nature
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Snorkling, Swimmming, Boating, Fishing
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-mint-50 dark:bg-gray-700/50 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                  <h3 class="text-xl font-semibold mb-4 text-teal-600 dark:text-teal-400">Tech & Gaming</h3>
+                  <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Learning about the newest tech tools
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Video Gaming, VR / AR
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      AI & Machine Learning, Predictive Analytics
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-mint-50 dark:bg-gray-700/50 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                  <h3 class="text-xl font-semibold mb-4 text-teal-600 dark:text-teal-400">Culinary Pursuits</h3>
+                  <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      International cuisine cooking
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Coffee tasting / brewing
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Food photography, growing my own food
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-mint-50 dark:bg-gray-700/50 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                  <h3 class="text-xl font-semibold mb-4 text-teal-600 dark:text-teal-400">Creative Pursuits</h3>
+                  <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Photography
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Web design
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 mr-3 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      Data visualization
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Professional Experience</h2>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-teal-500 pl-4">
+                    <h3 class="font-medium text-gray-900 dark:text-white">Business Analyst II at PG&E</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">2025 - Present</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Begun contract work as a Business Analyst / Data Engineer</p>
+                  </div>
+                  <div class="border-l-4 border-teal-500 pl-4">
+                    <h3 class="font-medium text-gray-900 dark:text-white">Inventory Planner / Analyst at RH</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">2023 - 2024</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Promoted after 11 months for exceptional contributions.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Education</h2>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="font-medium text-gray-900 dark:text-white">BA in Psychology</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">University of Colorado, Boulder • 2020</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Interested in uncovering patterns in behavior and human decision making</p>
+                  </div>
+                  <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="font-medium text-gray-900 dark:text-white">BS in Psychology</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">University of Colorado, Boulder • 2020</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Dean's List, Member of Phi Kappa Psi Fraternity</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Resume | Jack Sechler">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div class="bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 backdrop-blur-sm">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-4xl font-bold gradient-text">Resume</h1>
+        <a 
+          href="/JackSechler_Resume.pdf" 
+          download
+          class="inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-teal-500 to-purple-500 text-white font-medium hover:opacity-90 transition-all duration-200 hover:scale-105"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+      
+      <div class="w-full aspect-[8.5/11] rounded-xl overflow-hidden shadow-lg">
+        <iframe
+          src="/JackSechler_Resume.pdf"
+          class="w-full h-full"
+          style="border: none;"
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
+</Layout>

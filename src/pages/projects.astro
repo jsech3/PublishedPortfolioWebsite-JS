@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'Pixar Films Analytics Dashboard',
+    description: "Developed an interactive Power BI dashboard analyzing Pixar films over the past 30 years, highlighting key trends in box office performance, critical acclaim, and audience reception. Visualizations include financial insights, Academy Award achievements, and genre-based performance metrics, providing strategic insights into Pixar's historical success factors.",
+    image: '/images/PixarDashboardCombined.jpeg',
+    tags: ['Power BI', 'SQL', 'Data Visualization', 'Business Intelligence'],
+    link: 'https://mavenanalytics.io/project/29361',
+    dateAdded: '2025-03-24'
+  },
+  {
+    title: 'Coffee Shop Analytics Dashboard',
+    description: 'Created a Power BI dashboard analyzing consumer preferences and demographics for a coffee shop chain, providing insights for marketing strategy and product positioning.',
+    image: '/images/CoffeeDashboard.jpg',
+    tags: ['Power BI', 'SQL', 'Data Analysis', 'Business Intelligence'],
+    link: 'https://mavenanalytics.io/project/13067',
+    dateAdded: '2024-03-16'
+  },
+  {
+    title: 'Rock Paper Scissors Game',
+    description: 'Developed a Python-based game with multiple computer player strategies and an intuitive user interface. Implemented object-oriented design principles for maintainable code.',
+    image: '/images/SelectPlayerPic.jpg',
+    tags: ['Python', 'Object-Oriented Programming', 'Game Development'],
+    link: 'https://github.com/jsech3/Udacity-IntroToProgrammingND/blob/main/RockPaperScissorsGame/rps.py',
+    dateAdded: '2024-10-01'
+  },
+  {
+    title: 'Sales Performance Analytics',
+    description: 'Analyzed sales data using Python to evaluate sales methods and identify key performance indicators. Created visualizations to present findings and recommendations.',
+    image: '/images/PensSalesAnalysis.jpg',
+    tags: ['Python', 'Data Cleaning', 'Data Visualization', 'Data Analytics'],
+    link: 'https://github.com/jsech3/DataCamp-DataAnalyst-ProfessionalCert/tree/main',
+    dateAdded: '2023-03-05'
+  }
+].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+---
+
+<Layout title="Projects | Jack Sechler">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="bg-mint-100/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 backdrop-blur-sm">
+      <h1 class="text-4xl font-bold mb-8 gradient-text animate-gradient">Featured Projects</h1>
+      
+      <div class="grid gap-12">
+        {projects.map((project, index) => (
+          <a href={project.link} 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="group block"
+             style={`animation: fadeIn 0.5s ease-out forwards ${index * 0.2}s`}>
+            <article class="relative grid md:grid-cols-2 gap-8 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20 dark:hover:shadow-purple-500/20 p-6 border border-mint-200 dark:border-gray-700">
+              <div class="relative aspect-video md:aspect-auto overflow-hidden rounded-xl order-1 md:order-2">
+                <div class="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-purple-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+              <div class="flex flex-col justify-center order-2 md:order-1">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-wrap gap-2">
+                    {project.tags.map(tag => (
+                      <span class="px-3 py-1 text-sm rounded-full bg-mint-100 dark:bg-blue-900 text-teal-800 dark:text-blue-200 transform hover:scale-105 transition-transform duration-200">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <time datetime={project.dateAdded} class="text-sm text-gray-500 dark:text-gray-400">
+                    {new Date(project.dateAdded).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </time>
+                </div>
+
+                <h2 class="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600 group-hover:from-purple-600 group-hover:to-teal-600 transition-all duration-500">
+                  {project.title}
+                </h2>
+                
+                <p class="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                  {project.description}
+                </p>
+                
+                <div class="inline-flex items-center text-teal-600 dark:text-blue-400 group-hover:translate-x-2 transition-transform duration-300">
+                  View Project
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 8s linear infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
