@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GitHubRepos from '../components/GitHubRepos.astro';
 
 const projects = [
   {
@@ -37,7 +38,10 @@ const projects = [
 ].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
 ---
 
-<Layout title="Projects | Jack Sechler">
+<Layout
+  title="Projects | Jack Sechler"
+  description="Explore my portfolio of data analytics, business intelligence, and software development projects featuring Power BI, Python, SQL, and more."
+>
   <div class="max-w-6xl mx-auto px-4 py-12">
     <div class="bg-mint-100/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 backdrop-blur-sm">
       <h1 class="text-4xl font-bold mb-8 gradient-text animate-gradient">Featured Projects</h1>
@@ -96,6 +100,8 @@ const projects = [
           </a>
         ))}
       </div>
+
+      <GitHubRepos />
     </div>
   </div>
 </Layout>
