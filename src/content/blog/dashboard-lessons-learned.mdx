@@ -1,0 +1,138 @@
+---
+title: '5 Things I Wish I Knew Before Building My First Production Dashboard'
+description: 'Hard-earned lessons from the trenches of business intelligence and what I would tell my past self'
+pubDate: 2025-10-01
+heroImage: '/blog-placeholder-1.jpg'
+---
+
+# 5 Things I Wish I Knew Before Building My First Production Dashboard
+
+There's a massive gap between building a dashboard for a course project and deploying one that executives will actually rely on for decisions. I learned this the hard way.
+
+My first production dashboard? I thought I nailed it. Clean visuals, comprehensive metrics, slick interactions. I was proud of it.
+
+Then I watched someone try to use it in a meeting. They couldn't find the metric they needed, got confused by the filters, and gave up after 30 seconds. Ouch.
+
+Here are the lessons I learned—often painfully—that transformed how I approach dashboard design.
+
+## 1. Nobody Wants All The Data (They Just Think They Do)
+
+**What happened:**
+A stakeholder told me they needed "everything" about sales performance. So I gave them everything—20+ visuals, every possible breakdown, filters for every dimension.
+
+They hated it.
+
+**The lesson:**
+People don't actually want all the data. They want *answers to specific questions*. Your job is to figure out what those questions are, even if the stakeholder can't articulate them.
+
+**What I do now:**
+- Start every dashboard project with: "What decision are you trying to make?"
+- Build a simple prototype with 3-5 key metrics
+- Add complexity only when users ask for it (they rarely do)
+
+**Pro tip:** If you can't explain what a visual is for in one sentence, it probably shouldn't be there.
+
+## 2. Your Fancy DAX Won't Save Bad Data
+
+**What happened:**
+I spent hours writing complex DAX calculations for a revenue dashboard, only to discover the source data had duplicate entries and inconsistent date formats. My beautiful calculations were giving wrong answers.
+
+**The lesson:**
+Garbage in, garbage out. Always. No amount of clever analytics can fix bad underlying data.
+
+**What I do now:**
+- Spend 50% of my time on data quality before I even open Power BI
+- Build validation checks into my data model
+- Create a data quality dashboard before the actual dashboard
+- Document data issues and limitations clearly
+
+**Pro tip:** Add a "Last Refreshed" timestamp and data quality indicators to every dashboard. If numbers are wrong, users need to know why.
+
+## 3. The Best Filter Strategy is No Filters
+
+**What happened:**
+I built a dashboard with 8 different slicers. Users could filter by date, region, product category, sales rep, customer type... you name it. I thought I was giving them flexibility.
+
+Instead, they got analysis paralysis. Which filters should they use? In what order? What's the default view supposed to show?
+
+**The lesson:**
+Every filter you add multiplies the cognitive load. Most users won't experiment—they'll use the default view and nothing else.
+
+**What I do now:**
+- Start with zero filters and add them only when absolutely necessary
+- Use smart defaults that show the most relevant view (usually "last 30 days" or "current month")
+- If you need many filters, use drill-through pages instead of cluttering one view
+- Consider: can this be solved with multiple simple dashboards instead of one complex one?
+
+**Pro tip:** Watch someone use your dashboard. If they ask "what should I filter by?", you have too many options.
+
+## 4. Stakeholders Care About "Why," Not Just "What"
+
+**What happened:**
+I showed a dashboard that clearly indicated sales dropped 15% in Q3. The first question? "Why?"
+
+I had no answer. The dashboard showed *what* happened, not *why*.
+
+**The lesson:**
+Descriptive analytics (what happened) only gets you halfway. Decision-makers need diagnostic analytics (why it happened) to take action.
+
+**What I do now:**
+- Include comparison views (vs. last year, vs. target, vs. forecast)
+- Add drill-through pages that let users investigate anomalies
+- Use annotations to highlight known factors ("Product X discontinued")
+- Build in segmentation analysis to identify patterns
+
+**Pro tip:** The best dashboards answer the first three follow-up questions before they're asked.
+
+## 5. Performance Matters More Than You Think
+
+**What happened:**
+My dashboard looked amazing... but took 45 seconds to load. People stopped using it.
+
+**The lesson:**
+A slow dashboard is a useless dashboard. If it takes more than 5 seconds to load, users will lose patience.
+
+**What I do now:**
+- Optimize my data model ruthlessly (remove unused columns, use proper data types)
+- Aggregate data at the source when possible
+- Use incremental refresh for large datasets
+- Test performance with real data volumes, not sample data
+- Monitor query performance and optimize slow-running DAX
+
+**Pro tip:** Use Performance Analyzer in Power BI to identify bottlenecks. Usually it's a few specific visuals or calculations causing the problem.
+
+## Bonus Lesson: Version Control and Documentation Are Not Optional
+
+This one almost got me fired (okay, not really, but it was bad).
+
+I made updates to a production dashboard and accidentally broke a critical metric calculation. I couldn't remember what the old formula was. Panic ensued.
+
+Now I:
+- Keep a changelog in every dashboard (text box on a hidden admin page)
+- Document calculation logic in measure descriptions
+- Take screenshots before major changes
+- Use Power BI's deployment pipelines for dev/test/prod separation
+
+## What I Wish I'd Known
+
+If I could go back and tell my past self one thing, it would be this:
+
+**Your job isn't to build dashboards. Your job is to enable better decisions.**
+
+That means:
+- Understanding the business context, not just the data
+- Designing for users, not for your own portfolio
+- Focusing on insights that drive action, not just pretty visualizations
+- Making things simple, even when the data is complex
+
+The technical skills—SQL, DAX, Power BI features—are important. But they're just tools. The real skill is understanding what problem you're solving and building the simplest solution that works.
+
+## Your Turn
+
+What lessons did you learn the hard way? What would you tell someone building their first production dashboard?
+
+Drop your thoughts in the comments—I'd love to hear what I'm still getting wrong!
+
+---
+
+*Want to see these principles in action? Check out my [portfolio projects](/projects) where I apply these lessons to real-world data analysis challenges.*

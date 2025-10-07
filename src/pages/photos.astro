@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
 const photos = [
   {
@@ -75,7 +76,10 @@ const photos = [
 ];
 ---
 
-<Layout title="Photos | Jack Sechler">
+<Layout
+  title="Photos | Jack Sechler"
+  description="Personal photography showcasing travel adventures, culinary experiences, and underwater exploration from the Caribbean to New Orleans."
+>
   <div class="max-w-7xl mx-auto px-4 py-12">
     <div class="bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 backdrop-blur-sm">
       <h1 class="text-4xl font-bold mb-8 gradient-text">Photography</h1>
@@ -87,9 +91,10 @@ const photos = [
             style={`animation: fadeIn 0.5s ease-out forwards ${index * 0.2}s`}
           >
             <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <img 
-              src={photo.image} 
+            <img
+              src={photo.image}
               alt={photo.title}
+              loading="lazy"
               class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
