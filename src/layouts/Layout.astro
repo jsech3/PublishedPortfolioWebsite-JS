@@ -9,7 +9,7 @@ interface Props {
   image?: string;
 }
 
-const { title, description = "Data Analyst and Business Intelligence specialist portfolio showcasing projects in SQL, Power BI, Python, and data visualization.", image = "/og-image.jpg" } = Astro.props;
+const { title, description = "Jack Sechler, Data Architect and Data Scientist. Prediction systems and automation built to run in production: three live products and a publicly graded track record.", image = "/og-image.jpg" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -76,6 +76,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div class="mt-8 border-t border-mint-300 dark:border-gray-700 pt-8 md:flex md:items-center md:justify-between">
           <div class="flex space-x-6 md:order-2">
+            <!-- DAITIQ is where the shipped products and the contract-work
+                 offer live. This site is the resume; that one is the shop. -->
+            <a href="https://daitiq.com" target="_blank" rel="noopener noreferrer"
+               class="text-gray-600 hover:text-teal-600 dark:text-gray-400 dark:hover:text-gray-300 transform hover:scale-110 transition-all duration-300 font-mono text-sm font-bold self-center">
+              DAITIQ
+            </a>
             <a href="https://github.com/jsech3" target="_blank" rel="noopener noreferrer" 
                class="text-gray-600 hover:text-teal-600 dark:text-gray-400 dark:hover:text-gray-300 transform hover:scale-110 transition-all duration-300">
               <span class="sr-only">GitHub</span>
